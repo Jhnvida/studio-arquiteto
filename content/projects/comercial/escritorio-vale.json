@@ -1,0 +1,14 @@
+{
+    "id": "escritorio-vale",
+    "title": "Escritório Vale",
+    "location": "Faria Lima, SP",
+    "year": "2023",
+    "area": "1200",
+    "description": "Ambientes de trabalho híbridos com pé-direito generoso, iluminação indireta e materiais acústicos integrados ao desenho arquitetônico.",
+    "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200",
+    "gallery": [
+        "https://images.unsplash.com/photo-1497366756675-72f8f05f2bda?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=800"
+    ],
+    "category": "comercial"
+}

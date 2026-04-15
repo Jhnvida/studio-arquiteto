@@ -1,18 +1,7 @@
 <script setup lang="ts">
-const categories = [
-    {
-        id: "residencial",
-        title: "Residencial",
-        subtitle: "Projetos de Habitação",
-        image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80",
-    },
-    {
-        id: "comercial",
-        title: "Comercial",
-        subtitle: "Espaços Corporativos",
-        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80",
-    },
-];
+const { data: categories } = await useAsyncData("content-categories", () =>
+    queryCollection("categories").order("order", "ASC").all(),
+);
 </script>
 
 <template>
@@ -27,7 +16,7 @@ const categories = [
         </div>
 
         <div class="section-container grid gap-12 py-20 md:grid-cols-2 md:gap-16">
-            <NuxtLink v-for="category in categories" :key="category.id" :to="`/${category.id}`" class="block">
+            <NuxtLink v-for="category in categories ?? []" :key="category.slug" :to="`/${category.slug}`" class="block">
                 <div class="relative mb-8 aspect-[4/4] overflow-hidden rounded-lg bg-gray-50 md:aspect-[3/3]">
                     <img :src="category.image" :alt="category.title" class="h-full w-full object-cover" />
                 </div>
