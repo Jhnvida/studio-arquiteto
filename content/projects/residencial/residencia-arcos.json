@@ -5,7 +5,10 @@
     "year": "2024",
     "area": "450",
     "description": "Um estudo sobre a continuidade espacial e a luz zenital. A estrutura em betão aparente funde-se com grandes planos de vidro, eliminando as barreiras entre o interior e o jardim.",
-    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200",
-    "gallery": ["https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800"],
+    "image": "https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4",
+    "gallery": [
+        "https://images.unsplash.com/photo-1613977257363-707ba9348227",
+        "https://images.unsplash.com/photo-1613977257365-aaae5a9817ff"
+    ],
     "category": "residencial"
 }

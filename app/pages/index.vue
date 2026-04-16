@@ -21,7 +21,7 @@ const { data: categories } = await useAsyncData("content-categories", () =>
                 <p
                     class="text-sm font-bold uppercase tracking-[0.18em] text-gray-400 md:tracking-[0.3em] md:text-right"
                 >
-                    Explore nossas categorias
+                    Explore as categorias
                 </p>
             </div>
         </div>
@@ -34,14 +34,21 @@ const { data: categories } = await useAsyncData("content-categories", () =>
                 class="block group"
                 :class="{ 'md:pt-16': idx % 2 === 1 }"
             >
-                <div class="relative mb-8 aspect-[4/4] overflow-hidden bg-gray-50 md:aspect-[3/3]">
-                    <img :src="category.image" :alt="category.title" class="h-full w-full object-cover" />
+                <div class="mb-8 aspect-[4/4] overflow-hidden bg-gray-50 md:aspect-[3/3]">
+                    <NuxtImg
+                        :src="category.image"
+                        :alt="category.title"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        class="h-full w-full object-cover"
+                        loading="lazy"
+                        format="webp"
+                    />
                 </div>
 
                 <div class="flex flex-col gap-4">
                     <div>
                         <span class="label-micro mb-2 block">{{ category.subtitle }}</span>
-                        <h3 class="text-3xl font-bold md:text-4xl">{{ category.title }}</h3>
+                        <h3 class="text-3xl uppercase font-bold md:text-4xl">{{ category.title }}</h3>
                     </div>
 
                     <span class="btn-outline-minimal w-fit">

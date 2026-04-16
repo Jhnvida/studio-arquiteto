@@ -42,8 +42,11 @@ const year = new Date().getFullYear();
             <div
                 class="mt-14 flex flex-col gap-4 border-t border-gray-100 pt-10 md:flex-row md:items-center md:justify-between"
             >
-                <p class="text-[10px] font-medium uppercase tracking-widest text-gray-400">
-                    © {{ year }} Studio Arquiteto. Todos os direitos reservados.
+                <p
+                    class="inline-flex items-center gap-2 text-[10px] font-medium uppercase tracking-widest text-gray-400"
+                >
+                    <Icon name="lucide:copyright" size="12" /> {{ year }} Studio Arquiteto. Todos os direitos
+                    reservados.
                 </p>
             </div>
         </div>

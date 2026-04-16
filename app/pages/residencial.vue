@@ -15,21 +15,25 @@ const { data: projects } = await useAsyncData("projects-residencial", () =>
                 Voltar para o início
             </NuxtLink>
 
-            <h1 class="page-title-heading capitalize">Residencial</h1>
+            <h1 class="page-title-heading">Residencial</h1>
         </div>
 
         <div class="section-container space-y-24 py-20 md:space-y-40 md:py-24">
-            <article
+            <NuxtLink
                 v-for="(project, idx) in projects"
                 :key="project.slug"
+                :to="`/projetos/${project.slug}`"
                 class="project-list-grid group"
                 :class="{ 'md:[&>*:first-child]:order-2': idx % 2 === 1 }"
             >
                 <div class="project-list-card md:col-span-7">
-                    <img
+                    <NuxtImg
                         :src="project.image"
                         :alt="project.title"
+                        sizes="(max-width: 768px) 100vw, 60vw"
                         class="h-full w-full aspect-[16/10] object-cover transition-transform duration-1000 group-hover:scale-105"
+                        loading="lazy"
+                        format="webp"
                     />
                 </div>
 
@@ -57,7 +61,7 @@ const { data: projects } = await useAsyncData("projects-residencial", () =>
                         <Icon name="lucide:arrow-right" size="12" aria-hidden="true" />
                     </span>
                 </div>
-            </article>
+            </NuxtLink>
 
             <p v-if="!projects?.length" class="text-sm text-studio-textSoft">
                 Nenhum projeto residencial publicado ainda.
