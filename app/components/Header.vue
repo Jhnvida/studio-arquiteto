@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const isMenuOpen = ref(false);
+const route = useRoute();
 
 const links = [
     { label: "Residencial", to: "/residencial" },
@@ -11,21 +12,28 @@ const links = [
 const closeMenu = () => {
     isMenuOpen.value = false;
 };
+
+const isActive = (to: string) => route.path === to;
 </script>
 
 <template>
-    <header class="fixed top-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur-md">
+    <header class="fixed top-0 z-50 w-full border-b border-gray-100 bg-white/90 backdrop-blur-md">
         <nav class="section-container flex items-center justify-between py-6">
-            <NuxtLink to="/" class="text-xs font-black uppercase leading-tight tracking-tighter" @click="closeMenu">
-                STUDIO<br />ARQUITETO
+            <NuxtLink
+                to="/"
+                class="text-sm font-black uppercase leading-none tracking-[-0.05em] hover:opacity-60"
+                @click="closeMenu"
+            >
+                STUDIO ARQUITETO
             </NuxtLink>
 
-            <div class="hidden items-center space-x-12 md:flex">
+            <div class="hidden items-center space-x-10 md:flex">
                 <NuxtLink
                     v-for="link in links"
                     :key="link.to"
                     :to="link.to"
-                    class="text-[10px] font-bold uppercase tracking-widest hover:opacity-50"
+                    class="border-b border-transparent pb-1 text-[10px] font-bold uppercase tracking-widest transition-all hover:opacity-50"
+                    :class="{ 'border-studio-black': isActive(link.to) }"
                 >
                     {{ link.label }}
                 </NuxtLink>

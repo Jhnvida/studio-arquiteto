@@ -11,22 +11,22 @@ const year = new Date().getFullYear();
 
 <template>
     <footer class="mt-auto border-t border-gray-100 bg-white">
-        <div class="section-container py-16 md:py-20">
-            <div
-                class="grid gap-14 md:grid-cols-2 md:gap-16 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-start lg:gap-24"
-            >
-                <div>
-                    <NuxtLink to="/" class="inline-block text-xs font-black uppercase leading-tight tracking-tighter">
-                        STUDIO<br />ARQUITETO
+        <div class="section-container py-16 md:py-24">
+            <div class="grid gap-14 md:grid-cols-12 md:gap-12 lg:gap-20">
+                <div class="md:col-span-7">
+                    <NuxtLink to="/" class="inline-block text-sm font-black uppercase leading-none tracking-[-0.05em]">
+                        STUDIO ARQUITETO
                     </NuxtLink>
+
                     <p class="mt-6 max-w-sm text-sm leading-relaxed text-studio-textSoft">
                         Projetos de arquitetura contemporânea para ambientes residenciais, comerciais e corporativos.
                     </p>
                 </div>
 
-                <nav class="md:text-right" aria-label="Rodapé">
+                <nav class="md:col-span-5 md:justify-self-end" aria-label="Rodapé">
                     <p class="label-micro mb-5">Navegação</p>
-                    <ul class="flex flex-col gap-3 md:items-end">
+
+                    <ul class="flex flex-col gap-3 md:text-right">
                         <li v-for="link in links" :key="link.to">
                             <NuxtLink
                                 :to="link.to"

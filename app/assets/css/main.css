@@ -19,7 +19,7 @@
 
 @layer components {
     .section-container {
-        @apply mx-auto w-full max-w-6xl px-6 md:px-20;
+        @apply mx-auto w-full max-w-7xl px-6 md:px-12;
     }
 
     .label-micro {
@@ -27,7 +27,7 @@
     }
 
     .btn-outline-minimal {
-        @apply inline-flex items-center gap-2 border-b border-studio-black pb-1 text-[10px] font-bold uppercase tracking-widest;
+        @apply inline-flex items-center gap-2 border-b border-studio-black pb-1 text-[10px] font-bold uppercase tracking-widest transition-opacity hover:opacity-50;
     }
 
     .nav-mobile-link {
@@ -35,14 +35,26 @@
     }
 
     .page-title-section {
-        @apply mx-auto w-full max-w-6xl border-b border-gray-100 px-6 pt-32 pb-16 md:px-20;
+        @apply mx-auto w-full max-w-7xl border-b border-gray-100 px-6 pt-32 pb-16 md:px-12;
     }
 
     .page-title-heading {
-        @apply text-5xl font-bold tracking-tighter md:text-7xl;
+        @apply text-5xl font-bold tracking-tighter uppercase md:text-7xl;
     }
 
     .panel-soft {
         @apply rounded-lg border border-studio-border bg-studio-white shadow-soft;
+    }
+
+    .editorial-title {
+        @apply max-w-full text-[13vw] font-bold uppercase tracking-[-0.04em] leading-[0.9] sm:text-6xl md:text-8xl;
+    }
+
+    .project-list-grid {
+        @apply grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-14;
+    }
+
+    .project-list-card {
+        @apply relative overflow-hidden bg-gray-100;
     }
 }

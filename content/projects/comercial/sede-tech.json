@@ -1,14 +1,11 @@
 {
-    "id": "sede-tech",
+    "slug": "sede-tech",
     "title": "Sede Tech",
     "location": "São Paulo, SP",
     "year": "2023",
     "area": "1200",
     "description": "Ambientes colaborativos desenhados para a era digital. O foco na biofilia e na ergonomia cria um espaço de trabalho produtivo e humano.",
     "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200",
-    "gallery": [
-        "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1505373633560-1b5172604942?auto=format&fit=crop&q=80&w=800"
-    ],
+    "gallery": ["https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=800"],
     "category": "comercial"
 }

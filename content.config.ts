@@ -19,7 +19,7 @@ export default defineContentConfig({
             type: "data",
             source: "projects/**/*.json",
             schema: z.object({
-                id: z.string(),
+                slug: z.string(),
                 title: z.string(),
                 location: z.string(),
                 year: z.string(),
@@ -29,7 +29,7 @@ export default defineContentConfig({
                 gallery: z.array(z.string()),
                 category: z.enum(["residencial", "comercial"]),
             }),
-            indexes: [{ columns: ["category"] }, { columns: ["id"], unique: true }],
+            indexes: [{ columns: ["category"] }, { columns: ["slug"], unique: true }],
         }),
     },
 });

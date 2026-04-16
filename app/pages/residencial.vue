@@ -18,25 +18,41 @@ const { data: projects } = await useAsyncData("projects-residencial", () =>
             <h1 class="page-title-heading capitalize">Residencial</h1>
         </div>
 
-        <div class="section-container space-y-24 py-20 md:space-y-40">
-            <article v-for="project in projects" :key="project.id" class="group">
-                <div class="relative mb-8 aspect-[16/9] overflow-hidden rounded-lg bg-gray-50">
+        <div class="section-container space-y-24 py-20 md:space-y-40 md:py-24">
+            <article
+                v-for="(project, idx) in projects"
+                :key="project.slug"
+                class="project-list-grid group"
+                :class="{ 'md:[&>*:first-child]:order-2': idx % 2 === 1 }"
+            >
+                <div class="project-list-card md:col-span-7">
                     <img
                         :src="project.image"
                         :alt="project.title"
-                        class="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                        class="h-full w-full aspect-[16/10] object-cover transition-transform duration-1000 group-hover:scale-105"
                     />
                 </div>
 
-                <div class="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-                    <div>
-                        <span class="label-micro mb-2 block">{{ project.location }}</span>
-                        <h2 class="text-3xl font-bold tracking-tight md:text-5xl">{{ project.title }}</h2>
+                <div class="md:col-span-5">
+                    <div class="mb-4 flex items-center gap-4">
+                        <span class="label-micro">{{ project.category }}</span>
+                        <span class="h-px w-8 bg-gray-200"></span>
+                        <span class="label-micro">{{ project.year }}</span>
                     </div>
 
-                    <span
-                        class="btn-outline-minimal pointer-events-none inline-flex shrink-0 items-center gap-2 opacity-60"
-                    >
+                    <h2 class="text-4xl font-bold uppercase tracking-tighter leading-none md:text-6xl">
+                        {{ project.title }}
+                    </h2>
+
+                    <p class="mt-4 text-[11px] font-bold uppercase tracking-[0.25em] text-gray-400">
+                        {{ project.location }}
+                    </p>
+
+                    <p class="mt-8 max-w-sm text-sm leading-relaxed text-studio-textSoft">
+                        {{ project.description }}
+                    </p>
+
+                    <span class="btn-outline-minimal mt-8 inline-flex shrink-0 items-center gap-2 opacity-80">
                         Ver Projeto
                         <Icon name="lucide:arrow-right" size="12" aria-hidden="true" />
                     </span>
