@@ -15,4 +15,14 @@ export default defineNuxtConfig({
             ],
         },
     },
+    content: {
+        experimental: {
+            sqliteConnector: "native",
+        },
+    },
+    vite: {
+        optimizeDeps: {
+            include: ["@vue/devtools-core", "@vue/devtools-kit"],
+        },
+    },
 });
