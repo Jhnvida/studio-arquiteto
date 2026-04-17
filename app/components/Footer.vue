@@ -2,7 +2,7 @@
 const links = [
     { label: "Residencial", to: "/residencial" },
     { label: "Comercial", to: "/comercial" },
-    { label: "Escritório", to: "/escritorio" },
+    { label: "Estúdio", to: "/estudio" },
     { label: "Contato", to: "/contato" },
 ];
 
